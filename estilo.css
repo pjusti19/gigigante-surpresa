@@ -1,0 +1,151 @@
+/* Estilos gerais do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #81ffd5, #00c774); /* Fundo gradiente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+    overflow-y: auto; /* Permite rolagem se necessário */
+}
+
+/* Tela do presente */
+#gift-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Ícone do presente */
+#gift-icon {
+    font-size: 100px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#gift-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Contêiner da cruzadinha */
+#crossword-container {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+#crossword-container.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#crossword-container.hidden {
+    display: none;
+}
+
+#crossword {
+    display: flex;
+    flex-direction: column; /* Organiza as palavras verticalmente */
+    margin-top: 20px;
+    align-items: flex-start; /* Alinha tudo à esquerda */
+}
+
+.word {
+    display: flex; /* Exibe as caixas e números na mesma linha */
+    align-items: center; /* Alinha os elementos verticalmente */
+    margin-bottom: 10px; /* Espaço entre as palavras */
+}
+
+.word h2 {
+    margin-right: 10px; /* Espaço entre o número e as caixas */
+    font-size: 20px;
+    color: #333;
+}
+
+.word input {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px; /* Espaço entre as caixas */
+}
+
+.word input:last-child {
+    margin-right: 0; /* Remove o espaço após o último input */
+}
+
+.horizontal {
+    flex-direction: row; /* Certifica-se que os inputs da palavra horizontal estejam na linha */
+}
+
+.horizontal input:not(:first-child) {
+    border-left: none;
+}
+
+.vertical input:not(:first-child) {
+    border-top: none;
+}
+
+#hints {
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+    background: #ff5f6d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #ff3b50;
+}
+
+/* Confetes */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Impede que os confetes atrapalhem interações */
+    z-index: 9999;
+  }
+  
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff5f6d;
+    opacity: 0;
+    animation: confetti-fall 3s forwards;
+  }
+  
+  @keyframes confetti-fall {
+    0% {
+      opacity: 1;
+      transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  

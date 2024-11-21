@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruzadinha Surpresa</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Tela inicial com o ícone do presente -->
+  <div id="gift-screen">
+    <i id="gift-icon" class="fa-solid fa-gift"></i>
+  </div>
+
+  <!-- Contêiner da cruzadinha (oculto inicialmente) -->
+  <div id="crossword-container" class="hidden">
+    <h1>Parabéns meu amor! Completa pra ganhar um presentaço</h1>
+
+    <div id="hints">
+      <p>1. O quê você vai beber bastante hoje</p>
+      <p>2. Sua figurinha icônica</p>
+      <p>3. Palavra que eu escrevi errado na sua carta de aniversário de 2023</p>
+      <p>4. O que eu falei que seu brownie parecia quando voltamos a conversar</p>
+      <p>5. Agora eu acho ele uma ... (esse adjetivo também serve pra você)</p>
+      <p>6. A gente não deseja mal a quase...</p>
+      <p>7. Eu te adoro em ...</p>
+      <p>8. Restaurante que eu te levei pra comemorar seu aniversário em 2023</p>
+      <p>9. Primeiro filme que você me fez assistir</p>
+      <p>10. Eu te amo para ...</p>
+    </div>
+    
+    <div id="crossword">
+      <!-- Palavras da cruzadinha -->
+      <div class="word horizontal" data-answer="caip">
+        <h2>1</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="negrito">
+        <h2>2</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="velinha">
+        <h2>3</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="terra">
+        <h2>4</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="delicia">
+        <h2>5</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="ninguem">
+        <h2>6</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="tudo">
+        <h2>7</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="anella">
+        <h2>8</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="mammamia">
+        <h2>9</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+      <div class="word horizontal" data-answer="sempre">
+        <h2>10</h2><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1"><input maxlength="1">
+      </div>
+    </div>
+    
+    <button id="check-btn">Conferir</button>
+  </div>
+  
+  <div id="confetti-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
