@@ -9,6 +9,7 @@ body {
     align-items: center;
     min-height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
     overflow-y: auto; /* Permite rolagem se necessário */
+    flex-direction: column; /* Permite que o conteúdo seja empilhado em telas menores */
 }
 
 /* Tela do presente */
@@ -20,7 +21,6 @@ body {
     height: 100vh;
 }
 
-/* Ícone do presente */
 #gift-icon {
     font-size: 100px;
     color: white;
@@ -42,6 +42,8 @@ body {
     opacity: 0;
     transform: scale(0.8);
     transition: opacity 1s ease, transform 1s ease;
+    width: 90%; /* Torna o contêiner mais flexível */
+    max-width: 600px; /* Limita a largura em telas grandes */
 }
 
 #crossword-container.show {
@@ -61,9 +63,10 @@ body {
 }
 
 .word {
-    display: flex; /* Exibe as caixas e números na mesma linha */
+    display: flex;
     align-items: center; /* Alinha os elementos verticalmente */
     margin-bottom: 10px; /* Espaço entre as palavras */
+    flex-wrap: wrap; /* Permite quebra de linha para palavras muito longas */
 }
 
 .word h2 {
@@ -127,25 +130,80 @@ button:hover {
     height: 100%;
     pointer-events: none; /* Impede que os confetes atrapalhem interações */
     z-index: 9999;
-  }
-  
-  .confetti {
+}
+
+.confetti {
     position: absolute;
     width: 10px;
     height: 10px;
     background-color: #ff5f6d;
     opacity: 0;
     animation: confetti-fall 3s forwards;
-  }
-  
-  @keyframes confetti-fall {
+}
+
+@keyframes confetti-fall {
     0% {
-      opacity: 1;
-      transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
     }
     100% {
-      opacity: 0;
-      transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
     }
-  }
-  
+}
+
+/* Media Queries */
+
+/* Para telas menores que 768px (móveis e tablets) */
+@media (max-width: 768px) {
+    #gift-icon {
+        font-size: 80px;
+    }
+
+    #crossword-container {
+        width: 90%; /* O contêiner ocupa 90% da largura da tela */
+        padding: 10px;
+    }
+
+    #crossword {
+        align-items: center; /* Centraliza as palavras */
+    }
+
+    .word input {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Para telas menores que 480px (dispositivos muito pequenos) */
+@media (max-width: 480px) {
+    #gift-icon {
+        font-size: 60px;
+    }
+
+    #crossword-container {
+        width: 95%; /* O contêiner ocupa 95% da largura da tela */
+        padding: 5px;
+    }
+
+    #crossword {
+        align-items: center; /* Centraliza as palavras */
+    }
+
+    .word input {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
