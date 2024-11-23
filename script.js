@@ -58,7 +58,7 @@ document.getElementById('check-btn').addEventListener('click', () => {
 
   if (allCorrect) {
     createConfetti();  // Chama a função para criar confetes se tudo estiver correto
-    alert('Parabéns! Seu presente tá no armário da sala de estudos');
+    alert('Parabéns! Seu presente tá atrás da porta do banheiro da Lívia');
   } else {
     alert('Quase isso! Da uma conferida');
   }
